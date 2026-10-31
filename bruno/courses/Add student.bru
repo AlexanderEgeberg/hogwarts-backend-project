@@ -1,0 +1,21 @@
+meta {
+  name: Add student
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/courses/1/students
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "studentId": 4
+  }
+}
+
+assert {
+  res.status: eq 201
+}

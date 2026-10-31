@@ -1,0 +1,15 @@
+meta {
+  name: Delete teacher
+  type: http
+  seq: 5
+}
+
+delete {
+  url: {{baseUrl}}/teachers/5
+  body: none
+  auth: none
+}
+
+assert {
+  res.status: eq 204
+}

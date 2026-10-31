@@ -1,0 +1,22 @@
+meta {
+  name: Update student
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/students/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Harry James Potter",
+    "house": "Gryffindor"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

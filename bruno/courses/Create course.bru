@@ -1,0 +1,22 @@
+meta {
+  name: Create course
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/courses
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Divination",
+    "teacherId": 1
+  }
+}
+
+assert {
+  res.status: eq 201
+}

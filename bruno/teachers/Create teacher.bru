@@ -1,0 +1,22 @@
+meta {
+  name: Create teacher
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/teachers
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Gilderoy Lockhart",
+    "house": "Ravenclaw"
+  }
+}
+
+assert {
+  res.status: eq 201
+}

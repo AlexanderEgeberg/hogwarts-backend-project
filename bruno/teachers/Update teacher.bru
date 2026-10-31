@@ -1,0 +1,22 @@
+meta {
+  name: Update teacher
+  type: http
+  seq: 4
+}
+
+put {
+  url: {{baseUrl}}/teachers/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Minerva McGonagall",
+    "house": "Gryffindor"
+  }
+}
+
+assert {
+  res.status: eq 200
+}

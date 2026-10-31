@@ -1,0 +1,22 @@
+meta {
+  name: Create student
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/students
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Neville Longbottom",
+    "house": "Gryffindor"
+  }
+}
+
+assert {
+  res.status: eq 201
+}
